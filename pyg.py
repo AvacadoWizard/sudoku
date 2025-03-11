@@ -34,4 +34,5 @@ def drawGrid():
             pygame.draw.rect(SCREEN, WHITE, pygame.Rect(x, y, 50, 50))
             pygame.draw.rect(SCREEN, BLACK, rect, 1)
 
+
 main()

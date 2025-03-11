@@ -114,8 +114,3 @@ board.print_board()
 print("after solving")
 print(board.solve(board.board))
 board.print_answer()
-# board.solve(board.board)
-# board.print_answer()
-
-solved_board = Board("864371259325849761971265843436192587198657432257483916689734125713528694542916378")
-solved_board.print_board()
