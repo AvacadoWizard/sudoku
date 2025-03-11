@@ -54,6 +54,8 @@ class Board():
     def is_safe(self, board, r, c, num):
         # check if taken up
         if board[r][c] != "0":
+            print(board[r][c])
+            print("ahhh")
             return False
         # check the row
         for i in board[r]:
@@ -74,22 +76,26 @@ class Board():
     
     def solve(self, board,  r = 0, c = 0):
         # Base Case
-        if r == 9:
+        if r == 8 and c == 9:
             return True
         
-        # Recursive Case
-
         if c == 9:
             r += 1
             c = 0
+        # Recursive Case
+
+        if board[r][c] != "0":
+            return self.solve(board, r, c+1)
 
         for i in range(9):
-            if self.is_safe(board, r, c, str(i)):
-                board[r][c] = str(i)
+            if self.is_safe(board, r, c, str(i+1)):
+                board[r][c] = str(i+1)
+                self.answer[r][c] = str(i+1)
                 if self.solve(board, r, c+1):
-                    self.answer[r][c] = str(i)
                     return True
+                self.answer[r][c] = "0"
                 board[r][c] = "0"
+                
 
         return False
                 
@@ -105,7 +111,11 @@ b = "004300209005009001070060043006002087190007400050083000600000105003508690042
 board = Board(b)
 print("Initial Board") 
 board.print_board()
-board.print_board()
+print("after solving")
+print(board.solve(board.board))
+board.print_answer()
+# board.solve(board.board)
+# board.print_answer()
 
-# solved_board = Board("864371259325849761971265843436192587198657432257483916689734125713528694542916378")
-# solved_board.print_board()
+solved_board = Board("864371259325849761971265843436192587198657432257483916689734125713528694542916378")
+solved_board.print_board()
