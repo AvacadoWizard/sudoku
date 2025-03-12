@@ -114,3 +114,36 @@ board.print_board()
 print("after solving")
 print(board.solve(board.board))
 board.print_answer()
+
+# board.board = [[".",".","4",".",".",".","6","3","."],[".",".",".",".",".",".",".",".","."],["5",".",".",".",".",".",".","9","."],[".",".",".","5","6",".",".",".","."],["4",".","3",".",".",".",".",".","1"],[".",".",".","7",".",".",".",".","."],[".",".",".","5",".",".",".",".","."],[".",".",".",".",".",".",".",".","."],[".",".",".",".",".",".",".",".","."]]
+# board.print_board()
+
+# def isValidSudoku(board) -> bool:
+#     for r in range(len(board)):
+#         for c in range(9):
+#             curr = board[r][c]
+#             if curr == ".":
+#                 break
+#             for i in range(9):
+#                 if curr == board[r][i] and i != c:
+#                     print("False due to column")
+#                     return False
+#                 print(board[i][c], board[r][c])
+#                 if curr == board[i][c] and i != r:
+#                     print("False due to row")
+#                     return False
+#             start_row = r - r % 3
+#             start_col = c - c % 3
+#             for i in range(3):
+#                 for j in range(3):
+#                     if curr == board[start_row + i][start_col + j] and i != r and j != c:
+#                         print(r, c)
+#                         print(start_row + i, start_col + j)
+#                         print(board[r][c])
+#                         print(board[start_row + i][start_col + j])
+#                         return False
+#     return True
+
+# print(isValidSudoku(board.board))
+# print(board.board[3][3])
+# print(board.board[6][3])
